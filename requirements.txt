@@ -1,0 +1,9 @@
+datasets
+transformers
+evaluate
+pandas
+matplotlib
+sentencepiece
+scikit-learn
+protobuf
+accelerate

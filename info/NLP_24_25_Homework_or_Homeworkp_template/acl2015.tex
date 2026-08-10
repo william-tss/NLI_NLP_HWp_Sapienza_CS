@@ -1,0 +1,117 @@
+%
+% File acl2015.tex
+%
+% Contact: car@ir.hit.edu.cn, gdzhou@suda.edu.cn
+%%
+%% Based on the style files for ACL-2014, which were, in turn,
+%% Based on the style files for ACL-2013, which were, in turn,
+%% Based on the style files for ACL-2012, which were, in turn,
+%% based on the style files for ACL-2011, which were, in turn, 
+%% based on the style files for ACL-2010, which were, in turn, 
+%% based on the style files for ACL-IJCNLP-2009, which were, in turn,
+%% based on the style files for EACL-2009 and IJCNLP-2008...
+
+%% Based on the style files for EACL 2006 by 
+%%e.agirre@ehu.es or Sergi.Balari@uab.es
+%% and that of ACL 08 by Joakim Nivre and Noah Smith
+
+\documentclass[11pt]{article}
+\usepackage{acl2015}
+\usepackage{times}
+\usepackage{url}
+\usepackage{latexsym}
+\usepackage{natbib}
+\usepackage{color}
+\definecolor{citecolor}{RGB}{34,139,34}
+\usepackage[pagebackref=true,breaklinks=true,letterpaper=true,citecolor=citecolor,colorlinks,bookmarks=false]{hyperref}
+\usepackage[capitalise]{cleveref}
+\usepackage[labelfont={bf,small},font=small]{caption}
+%\setlength\titlebox{5cm}
+\newcommand{\minisection}[1]{\noindent{\textbf{#1.}}}
+% You can expand the titlebox if you need extra space
+% to show all the authors. Please do not make the titlebox
+% smaller than 5cm (the original size); we will check this
+% in the camera-ready version and ask you to change it back.
+
+
+\title{NLP 2024-2025 Homework/Homeworkp LaTeX template}
+
+\author{First Author \\
+  Affiliation / Address line 1 \\
+  Affiliation / Address line 2 \\
+  Affiliation / Address line 3 \\
+  {\tt email@domain} \\\And
+  Second Author \\
+  Affiliation / Address line 1 \\
+  Affiliation / Address line 2 \\
+  Affiliation / Address line 3 \\
+  {\tt email@domain} \\}
+
+\date{}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+ Write here the abstract of your Homework/Homeworkp.
+ How to write an abstract? We suggest you to read this~\cite{howabstract}
+\end{abstract}
+
+%Describe the NLP task
+%Provide examples of input and expected output
+%What is the current state-of-the-art for this task (study related work or surveys)
+%Applications for this task
+%List datasets available for
+%Existing tools or libraries that can be used
+%Papers with code
+%State-of-the-art evaluation
+
+
+\section{Task description/Problem statement}
+Describe in this Section the NLP task addressed in your Homework or Homeworkp.
+Provide definitions and cite the proper references.
+To correctly cite bibliographical references, you can read this~\cite{latexguide}. This \cite{DevlinCLT19} is an example of bibliographic reference.
+
+\subsection{Examples}
+In this Section, provide examples of input and expected output.
+Read this~\cite{latexfig}, for some instructions on how to include figures and tables in a LaTeX document
+
+
+\subsection{Real-world applications}
+Describe real-world downstream applications involving the addressed algorithms/models.
+
+\section{Related work}
+What is the current state-of-the-art for this task (primary related studies or surveys).
+How to write a good Related Work? Read this~\cite{relatedwork}.
+
+\section{Datasets and benchmarks}
+Describe available datasets and benchmarks.
+
+\section{Existing tools, libraries, papers with code}
+Describe existing tools, libraries that can be used, and papers with code.
+
+\section{State-of-the-art evaluation}
+Describe how existing systems/models are evaluated in the literature.
+
+\section{Comparative evaluation}
+For Homeworkp only, describe your comparative evaluation experimental setting:
+\begin{itemize}
+    \item describe the datasets;
+    \item describe the systems and the baselines;
+    \item describe the measures and the evaluation protocol.
+\end{itemize}
+
+\subsection{Results}
+Provide evidence about the resulting performances. Discuss the results, and try to motivate the performances. 
+
+\subsection{Discussion}
+What are the limits of the compared systems? What are the committed errors? Why?
+
+\section{Conclusions}
+Summarize your work, and more important, discuss future works.
+
+\minisection{Contributions} A contribution statement declaring which author did what, in case more than one author.
+
+
+\bibliographystyle{plain} % We choose the "plain" reference style
+\bibliography{refs} % Entries are in the refs.bib file
+\end{document}

@@ -1,0 +1,33 @@
+TITLE:
+    Natural Language Inference: A Comparative Evaluation of Transformer Models on Adversarial Datasets
+
+Brief description of the NLP topic addressed:
+    Natural Language Inference (NLI), or Recognizing Textual Entailment, is a foundational NLP task that requires a model to determine whether a "premise" sentence entails, contradicts, or is neutral towards a given "hypothesis" sentence. While modern Transformer-based models achieve human-level performance on standard benchmarks (like SNLI and MNLI), recent research shows they often rely on shallow linguistic heuristics and biases rather than genuine semantic understanding. This project addresses the robustness of NLI systems by evaluating them on Adversarial NLI (ANLI) datasets, which are explicitly designed by humans to exploit model weaknesses and expose these vulnerabilities. The goal of this HWp is to perform a comparative experimental evaluation to assess how different architectures withstand these adversarial attacks, providing a scientific discussion on their failure modes.
+
+RESULTS OF THE PRELIMINARY ANALYSIS:
+    Existing literature:
+
+        Bowman et al. (2015) - "A large annotated corpus for learning natural language inference" (Introduces SNLI).
+
+        Williams et al. (2018) - "A Broad-Coverage Challenge Corpus for Sentence Understanding through Inference" (Introduces MNLI).
+
+        Nie et al. (2020) - "Adversarial NLI: A New Benchmark for Natural Language Understanding" (The core paper introducing the adversarial approach).
+
+    Existing datasets/benchmarks:
+
+        MNLI (Multi-Genre NLI): Used as the standard baseline training corpus.
+
+        ANLI (Adversarial NLI): A large-scale NLI benchmark dataset collected via an iterative, adversarial human-and-model-in-the-loop procedure. It consists of three rounds (R1, R2, R3) of increasing difficulty.
+
+    Existing paper with code:
+
+        Paper: "Adversarial NLI: A New Benchmark for Natural Language Understanding" (Nie et al., 2020).
+
+        Code/Tools: The official repositories are available on GitHub and highly integrated into Hugging Face transformers and datasets libraries, making it straightforward to retrieve data and pre-trained checkpoints for evaluation. Extensively documented on Papers with Code under the ANLI benchmark section.
+
+EXIXSTING SYSTEMS AND DATASETS TO BE INVOLVED IN THE COMPARATIVE EXPERIMENTAL SETTING:
+    Datasets:
+        ANLI, MNLI
+
+    Systems to be compared:
+        BERT-base or DistilBERT, and RoBERTa-lagre or DeBERTa-v3
