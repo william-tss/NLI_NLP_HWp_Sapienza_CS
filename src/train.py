@@ -24,6 +24,7 @@ def main():
     parser.add_argument("--model", type=str, required=True, help="Identificativo del modello su Hugging Face")
     parser.add_argument("--output_dir", type=str, default="./out", help="Cartella di destinazione per i checkpoint")
     parser.add_argument("--smoke_test", action="store_true", help="Esegue un test rapido su 2000 esempi")
+    parser.add_argument("--resume", action="store_true", help="Riprende il training dall'ultimo checkpoint")
     args = parser.parse_args()
 
     print(f"Caricamento tokenizer e modello: {args.model}")
@@ -89,7 +90,7 @@ def main():
     )
 
     print("Inizio addestramento...")
-    trainer.train()
+    trainer.train(resume_from_checkpoint=args.resume if args.resume else None)
 
 
 if __name__ == "__main__":
