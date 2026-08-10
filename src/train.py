@@ -77,7 +77,8 @@ def main():
         save_strategy="no" if args.smoke_test else "steps",
         save_steps=2000 if not args.smoke_test else None,
         seed=42,
-        fp16=torch.cuda.is_available()
+        # fp16=torch.cuda.is_available()
+        fp16 = False if "deberta" in args.model else torch.cuda.is_available()
     )
 
     trainer = Trainer(
