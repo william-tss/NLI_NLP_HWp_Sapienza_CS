@@ -68,19 +68,21 @@ def main():
     # Iperparametri definiti nella guida
     training_args = TrainingArguments(
         output_dir=args.output_dir,
-        learning_rate=1.5e-5 if "deberta" in args.model else 2e-5,
+        learning_rate=2e-5,  # Ripristiniamo il valore potente
         adam_epsilon=1e-6,
         num_train_epochs=1 if args.smoke_test else 2,
         per_device_train_batch_size=16,
-        gradient_accumulation_steps=1,  # ELIMINATO: era la causa del blocco su Kaggle
+        gradient_accumulation_steps=1,
         per_device_eval_batch_size=32,
         warmup_ratio=0.1,
         weight_decay=0.01,
         eval_strategy="epoch" if args.smoke_test else "steps",
-        eval_steps=2000 if not args.smoke_test else None,
+        eval_steps=1500 if not args.smoke_test else None,  # Valutiamo più spesso
         save_strategy="no" if args.smoke_test else "steps",
-        save_steps=2000 if not args.smoke_test else None,
-        save_total_limit=2,
+        save_steps=1500 if not args.smoke_test else None,  # Salviamo più spesso
+        save_total_limit=3,  # Teniamo gli ultimi 3 per sicurezza
+        load_best_model_at_end=True,  # LA VERA MAGIA CHE CI SALVA
+        metric_for_best_model="accuracy",
         seed=42,
         fp16=False if "deberta" in args.model else torch.cuda.is_available()
     )
