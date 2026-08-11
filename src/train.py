@@ -10,6 +10,8 @@ from transformers import (
     DataCollatorWithPadding
 )
 import torch
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 
 def compute_metrics(eval_pred):
@@ -70,7 +72,7 @@ def main():
         adam_epsilon=1e-6,
         num_train_epochs=1 if args.smoke_test else 2,
         per_device_train_batch_size=16,
-        gradient_accumulation_steps=2 if "deberta" in args.model else 1,  # LA VERA SOLUZIONE
+        gradient_accumulation_steps=2 if "deberta" in args.model else 1,
         per_device_eval_batch_size=32,
         warmup_ratio=0.06,
         weight_decay=0.01,
