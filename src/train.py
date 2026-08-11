@@ -66,7 +66,8 @@ def main():
     # Iperparametri definiti nella guida
     training_args = TrainingArguments(
         output_dir=args.output_dir,
-        learning_rate=1e-5 if "deberta" in args.model else 2e-5,
+        #learning_rate=1e-5 if "deberta" in args.model else 2e-5,
+        learning_rate=1.5e-5 if "deberta" in args.model else 2e-5,
         adam_epsilon=1e-6,
         num_train_epochs=1 if args.smoke_test else 2,
         per_device_train_batch_size=16,
@@ -88,7 +89,7 @@ def main():
         train_dataset=tokenized_train,
         eval_dataset=tokenized_val,
         compute_metrics=compute_metrics,
-        data_collator=data_collator,  # <--- USA IL DATA COLLATOR INVECE DI TOKENIZER
+        data_collator=data_collator,
     )
 
     print("Inizio addestramento...")
