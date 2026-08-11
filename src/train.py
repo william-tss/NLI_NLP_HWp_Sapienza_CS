@@ -144,6 +144,7 @@ def main():
     training_args = TrainingArguments(
         output_dir=str(output_dir),
         learning_rate=learning_rate,
+        adam_epsilon=1e-6,
         num_train_epochs=epochs,
         per_device_train_batch_size=batch_size,
         per_device_eval_batch_size=32,
