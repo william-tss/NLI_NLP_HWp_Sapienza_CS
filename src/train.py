@@ -66,12 +66,12 @@ def main():
     # Iperparametri definiti nella guida
     training_args = TrainingArguments(
         output_dir=args.output_dir,
-        learning_rate=1e-5 if "deberta" in args.model else 2e-5,
+        learning_rate=7e-6 if "deberta" in args.model else 2e-5,
         adam_epsilon=1e-6,
         num_train_epochs=1 if args.smoke_test else 2,
         per_device_train_batch_size=16,
         per_device_eval_batch_size=32,
-        warmup_ratio=0.06,
+        warmup_ratio=0.1,
         weight_decay=0.01,
         eval_strategy="epoch" if args.smoke_test else "steps",
         eval_steps=2000 if not args.smoke_test else None,
